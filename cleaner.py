@@ -24,9 +24,10 @@ def rem_in_cwd(ignore_dic, time_treshold):
 					print("Odstraňujem priečinok " + os.getcwd() + "\\" + entry.name + " a všetok jeho obsah")
 					shutil.rmtree(entry.name, onerror = remShut)
 
-os.chdir(os.path.dirname('C:\\') + "Users\\" + "dev\\" + "Downloads")
-# print(os.getcwd())
-ignore_dic = ['nemazat']
-# Files modified before this treshold will be deleted (86400 = one day in seconds) 
-time_treshold = 0
-rem_in_cwd(ignore_dic, time_treshold)
+if __name__ == '__main__':
+	os.chdir(os.path.dirname('C:\\') + "Users\\" + "dev\\" + "Downloads")
+	# print(os.getcwd())
+	ignore_dic = ['nemazat']
+	# Files modified before this treshold will be deleted (86400 = one day in seconds) 
+	time_treshold = 0
+	rem_in_cwd(ignore_dic, time_treshold)
